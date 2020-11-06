@@ -131,7 +131,7 @@ public class Libro {
             if (esLibroDeTexto == true) {
                 System.out.println("Libro de texto: Sí");
             }
-            else{
+            else {
                 System.out.println("Libro de texto: No");
             }
         }
@@ -142,11 +142,21 @@ public class Libro {
      */
     public String getDetalles() {
         String detallesLibro;
-        if (numeroReferencia == ("")) {
-            detallesLibro = "Título: " + titulo + ", Autor: " + autor + ", Número de páginas: " + numeroPaginas + ", Número de referencia: ZZZ.";
+        if (esLibroDeTexto == true) {
+            if (numeroReferencia == ("")) {
+                detallesLibro = "Título: " + titulo + ", Autor: " + autor + ", Número de páginas: " + numeroPaginas + ", Número de referencia: ZZZ. Libro de texto: Sí";
+            }
+            else {
+                detallesLibro = "Título: " + titulo + ", Autor: " + autor + ", Número de páginas: " + numeroPaginas + ", Número de referencia: " + numeroReferencia + ", Libro de texto: Sí";
+            }
         }
         else {
-            detallesLibro = "Título: " + titulo + ", Autor: " + autor + ", Número de páginas: " + numeroPaginas + ", Número de referencia: " + numeroReferencia + ".";
+            if (numeroReferencia == ("")) {
+                detallesLibro = "Título: " + titulo + ", Autor: " + autor + ", Número de páginas: " + numeroPaginas + ", Número de referencia: ZZZ.Libro de texto: No";
+            }
+            else {
+                detallesLibro = "Título: " + titulo + ", Autor: " + autor + ", Número de páginas: " + numeroPaginas + ", Número de referencia: " + numeroReferencia + ". Libro de texto: No";
+            }
         }
         return detallesLibro;
     }
