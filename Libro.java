@@ -14,6 +14,7 @@ public class Libro {
     private String titulo;
     private int numeroPaginas;
     private String numeroReferencia;
+    private int vecesPrestado;
 
     /**
      * Fija el autor y el titulo del libro a los dados como parametro
@@ -24,6 +25,7 @@ public class Libro {
         titulo = tituloLibro;
         numeroPaginas = numeroDePaginas;
         numeroReferencia = ("");
+        vecesPrestado = 0;
     }
     
     /**
@@ -81,20 +83,36 @@ public class Libro {
     }
     
     /**
+     * Devuelve las veces que se ha prestado el libro
+     */
+    public int getVecesPrestado() {
+        return vecesPrestado;
+    }
+    
+    /**
+     * Imita la acción de prestar un libro sumándole 1 al valor de vecesPrestado
+     */
+    public void prestar() {
+        vecesPrestado += 1;
+    }
+    
+    /**
      * Imprime los detalles con todos los atributos del libro
      */
     public void imprimirDetalles() {
         if (numeroReferencia == ("")) {
-            System.out.println("Título: " + titulo + ".");
-            System.out.println("Autor: " + autor + ".");
-            System.out.println("Número de páginas: " + numeroPaginas + ".");
-            System.out.println("Número de referencia: ZZZ.");
+            System.out.println("Título: " + titulo + "");
+            System.out.println("Autor: " + autor + "");
+            System.out.println("Número de páginas: " + numeroPaginas + "");
+            System.out.println("Número de referencia: ZZZ");
+            System.out.println("Veces prestado: " + vecesPrestado + "");
         }
         else {
-            System.out.println("Título: " + titulo + ".");
-            System.out.println("Autor: " + autor + ".");
-            System.out.println("Número de páginas: " + numeroPaginas + ".");
-            System.out.println("Número de referencia: " + numeroReferencia + ".");
+            System.out.println("Título: " + titulo + "");
+            System.out.println("Autor: " + autor + "");
+            System.out.println("Número de páginas: " + numeroPaginas + "");
+            System.out.println("Número de referencia: " + numeroReferencia + "");
+            System.out.println("Veces prestado: " + vecesPrestado + "");
         }
     }
     
